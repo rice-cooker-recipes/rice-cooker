@@ -51,3 +51,16 @@ model Vendor {
   image       String
   website     String
 }
+
+model Recipe {
+  id          Int      @id @default(autoincrement())
+  title       String   @unique
+  description String
+  ingredients String
+  cuisine     String
+  dietary     String
+  imageUrl    String
+  link        String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
