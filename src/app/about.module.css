@@ -1,0 +1,158 @@
+.main {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    background-color: white;
+  }
+  
+  .heroSection {
+    width: 100%;
+    padding: 4rem 2rem;
+    background-color: #628473;
+  }
+  
+  .heroContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    color: #000;
+  }
+  
+  .title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #000;
+  }
+  
+  .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .heroImage {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    color: black;
+  }
+  
+  .section {
+    margin: 4rem 0;
+    background-color: white;
+  }
+  
+  .sectionContent {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+  }
+  
+  .textContent {
+    flex: 1;
+  }
+  
+  .imageContent {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+  
+  .sectionText {
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+  
+  .sectionImage {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+  }
+
+  /* Specific section styles */
+  
+  .missionSection {
+    background-color: white;
+  }
+  
+  .howItWorksSection {
+    background-color: #628473;
+  }
+  
+  .goalSection {
+    background-color: white;
+  }
+  
+  .contactSection {
+    background-color: #628473;
+    padding: 4rem 0;
+    margin-bottom: 0;
+  }
+  
+  .contactContent {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .contactInfo {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 2rem;
+  }
+  
+  .contactItem {
+    text-align: left;
+  }
+  
+  .contactItem h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .contactItem p {
+    margin: 0.25rem 0;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .sectionContent {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  
+    .title {
+      font-size: 2.5rem;
+    }
+  
+    .subtitle {
+      font-size: 1.25rem;
+    }
+  
+    .heroSection {
+      padding: 2rem 1rem;
+    }
+  
+    .sectionImage {
+      max-width: 100%;
+    }
+  }

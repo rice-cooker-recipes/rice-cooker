@@ -1,75 +1,126 @@
-import { getServerSession } from 'next-auth';
-import { Col, Container, Row } from 'react-bootstrap';
-import { loggedInProtectedPage } from '@/lib/page-protection';
-import authOptions from '@/lib/authOptions';
+import React from 'react';
+import Image from 'next/image';
+import styles from '@/app/about.module.css';
 
-/** Render a list of stuff for the logged-in user. */
-const ListPage = async () => {
-  // Protect the page, only logged-in users can access it.
-  const session = await getServerSession(authOptions);
-  loggedInProtectedPage(
-    session as {
-      user: { email: string; id: string; randomKey: string };
-    } | null,
-  );
+const AboutPage = () => (
+  <main className={styles.main}>
+    {/* Hero Section */}
+    <header className={styles.heroSection}>
+      <article className={styles.heroContent}>
+        <h1 className={styles.title}>About Us</h1>
+        <p className={styles.subtitle}>
+          At Rice Cooker Recipes, we empower college students to cook healthy, affordable meals with limited resources.
+        </p>
+        <Image
+          src="/Rice-Cooker-Recipe1.jpeg"
+          alt="Rice Cooker Recipes"
+          width={300}
+          height={400}
+          className={styles.heroImage}
+        />
+      </article>
+    </header>
 
-  return (
-    <main>
-      <Container id="list" fluid className="py-3">
-        <Row>
-          <Col>
-            <h2 className="h4 mb-3 text-center">About Us:</h2>
-            <h5 className="mb-4 text-center">
-              <strong>Rice Cooker Recipes</strong>
-              {' '}
-              helps college students cook healthy, affordable meals with limited kitchen resources. We provide simple,
-              creative recipes that can be made with minimal equipment, like a rice cooker, and ingredients
-              available near campus.
-            </h5>
+    {/* Mission Section */}
+    <section className={`${styles.section} ${styles.missionSection}`}>
+      <article className={styles.container}>
+        <figure className={styles.sectionContent}>
+          <article className={styles.textContent}>
+            <h2 className={styles.sectionTitle}>Our Mission</h2>
+            <p className={styles.sectionText}>
+              At Rice Cooker Recipes, our mission is to revolutionize the way college students approach
+              meal planning and preparation. We believe that everyone deserves access to delicious,
+              nutritious food, regardless of their living situation or kitchen capabilities.
+            </p>
+          </article>
+          <figure className={styles.imageContent}>
+            <Image
+              src="/Rice-Cooker-Recipe3.jpg"
+              alt="Our Mission"
+              width={200}
+              height={300}
+              className={styles.sectionImage}
+            />
+          </figure>
+        </figure>
+      </article>
+    </section>
 
-            <section className="mb-4">
-              <h2 className="h4 mb-3 text-center">The Problem:</h2>
-              <h5 className="text-center">
-                Students often rely on fast food and vending machines due
-                to limited time, kitchen space, and cooking skills,
-                leading to unhealthy eating habits and wasted money.
-              </h5>
-            </section>
+    {/* How It Works Section */}
+    <section className={`${styles.section} ${styles.howItWorksSection}`}>
+      <article className={styles.container}>
+        <figure className={styles.sectionContent}>
+          <figure className={styles.imageContent}>
+            <Image
+              src="/Collaborative.jpg"
+              alt="How It Works"
+              width={200}
+              height={300}
+              className={styles.sectionImage}
+            />
+          </figure>
+          <article className={styles.textContent}>
+            <h2 className={styles.sectionTitle}>How It Works</h2>
+            <p className={styles.sectionText}>
+              Our platform connects students, vendors, and administrators to create a collaborative
+              ecosystem. Students can search for recipes, share their creations, and access
+              cost-saving information. Vendors provide pricing and availability data, while
+              administrators manage content and ensure quality standards.
+            </p>
+          </article>
+        </figure>
+      </article>
+    </section>
 
-            <section className="mb-4">
-              <h2 className="h4 mb-3 text-center">The Solution:</h2>
-              <h5 className="text-center">Rice Cooker Recipes offers recipes that:</h5>
-              <h5 className="text-center">~ Use basic kitchen tools.</h5>
-              <h5 className="text-center">~ Feature ingredients available locally.</h5>
-              <h5 className="text-center">~ Cater to dietary needs (vegan, gluten-free, etc.)</h5>
-              <h5 className="text-center">~ Include cost estimates, servings, and prep time.</h5>
-            </section>
+    {/* Our Goal Section */}
+    <section className={`${styles.section} ${styles.goalSection}`}>
+      <article className={styles.container}>
+        <figure className={styles.sectionContent}>
+          <article className={styles.textContent}>
+            <h2 className={styles.sectionTitle}>Our Goal</h2>
+            <p className={styles.sectionText}>
+              Our ultimate goal is to empower college students to take control of their
+              eating habits, save money, and improve their overall health and well-being.
+              By providing accessible, versatile recipes and resources, we aim to make
+              home-cooked meals a viable and enjoyable option for students of all backgrounds.
+            </p>
+          </article>
+          <figure className={styles.imageContent}>
+            <Image
+              src="/Student Well-Being.webp"
+              alt="Our Goal"
+              width={200}
+              height={300}
+              className={styles.sectionImage}
+            />
+          </figure>
+        </figure>
+      </article>
+    </section>
 
-            <section className="mb-4">
-              <h2 className="h4 mb-3 text-center">How It Works:</h2>
-              <h5 className="text-center">
-                <strong>Students</strong>
-                {' '}
-                can search and share recipes with ingredient costs and local availability.
-                <strong> Vendors</strong>
-                {' '}
-                provide pricing and stock information, helping students find the best deals.
-                <strong> Admins</strong>
-                {' '}
-                manage content and ensure quality.
-              </h5>
-            </section>
+    {/* Contact Us Section */}
+    <section className={`${styles.section} ${styles.contactSection}`}>
+      <article className={styles.container}>
+        <article className={styles.contactContent}>
+          <h2 className={styles.sectionTitle}>Contact Us</h2>
+          <p className={styles.sectionText}>
+            Have questions or suggestions? We would love to hear from you. Reach out to us using the information below.
+          </p>
+          <address className={styles.contactInfo}>
+            <article className={styles.contactItem}>
+              <h3>Email</h3>
+              <p>support@ricecookerrecipes.com</p>
+            </article>
+            <article className={styles.contactItem}>
+              <h3>Follow Us</h3>
+              <p>Instagram: @ricecookerrecipes</p>
+              <p>Twitter: @ricecookerrecipes</p>
+            </article>
+          </address>
+        </article>
+      </article>
+    </section>
+  </main>
+);
 
-            <h2 className="h4 mb-3 text-center">Our Goal:</h2>
-            <h5 className="mb-4 text-center">
-              Our goal is to help students eat better, save money, and spend less time cooking while enjoying tasty,
-              nutritious meals.
-            </h5>
-          </Col>
-        </Row>
-      </Container>
-    </main>
-  );
-};
-
-export default ListPage;
+export default AboutPage;
